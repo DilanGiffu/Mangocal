@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥭 Mangocal 1.2</title>
+
+    <style>
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;            
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            height: 60pt;
+            margin: -6pt;
+            line-height: 60pt;
+        }
+
+        input.txtbx {
+            margin-top: 15pt;
+            text-align: center ;
+            height: 4ch;
+            font: bold 8pt Tahoma;
+            border-radius: 5pt;
+            border-style: none;
+            outline-style: none;
+            outline-color: black;
+            background-color:sandybrown
+        }
+
+        input#butop {
+            margin-top: 8pt;
+            cursor:pointer;
+            width: 13ch;
+            height: 3ch;
+            border-radius: 5pt;
+            border-style:hidden;
+            outline-style: none;
+            background-color:darkorange;
+        }
+
+        div#res {
+            text-align: center;
+            margin: auto;
+            margin-top: 9pt;
+            border-radius: 100pt;
+            font: normal 15pt Tahoma;
+            width: auto;
+            height: 30pt;
+            line-height: 29pt;
+            filter: drop-shadow(2pt 2pt 3pt rgb(218, 193, 193))
+        }
+
+        input#txtop {
+            width: 4ch;
+        }
+
+        div#carinho {
+        font-size: 11.6px;
+        position: fixed;
+        bottom: 25px;
+        width: 100%;
+        text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>🥭 Mangocal</h1>
+    <input class = "txtbx" type="number" name="txt1" id="txt1">
+    <input class = "txtbx" type="text" name="txtop" id="txtop">
+    <input class = "txtbx" type="number" name="txt2" id="txt2">
+    <br/><input id = "butop" type="button" value="🔥 OPERAR">
+
+    <div id = "res"></div>
+
+    <div id = "carinho">Produzido com carinho pela **** © 2021</div>
+
+    <script>
+        var txt1 = document.getElementById('txt1')
+        var txt2 = document.getElementById('txt2')
+        var txtop = document.getElementById('txtop')
+        var butop = document.querySelector('input#butop')
+        var resonscreen = document.getElementById('res')
+        
+        butop.addEventListener('click', operar)
+        butop.addEventListener('mouseover', over)
+        butop.addEventListener('mouseout', out)
+        butop.addEventListener('mousedown', down)
+
+        function operar() {
+            var n1 = Number(txt1.value)
+            var n2 = Number(txt2.value)
+            
+            switch (txtop.value) {
+                case '+':
+                    res = n1 + n2
+                    resonscreen.style.backgroundColor = '#b3b3b3'
+                    break
+                case '-':
+                    res = n1 - n2
+                    resonscreen.style.backgroundColor = '#b3b3b3'
+                    break
+                case '*':
+                    res = n1 * n2
+                    resonscreen.style.backgroundColor = '#b3b3b3'
+                    break
+                case 'x':
+                    res = n1 * n2
+                    resonscreen.style.backgroundColor = '#b3b3b3'
+                    break
+                case '/':
+                    res = n1 / n2
+                    resonscreen.style.backgroundColor = '#b3b3b3'
+                    break
+                default:
+                    res = ''
+                    resonscreen.style.backgroundColor = 'Transparent'
+                    alert('Operação rejeitada! Insira um símbolo válido.')
+            }
+
+            resonscreen.innerHTML = res
+            resonscreen.style.width = `${resonscreen.innerHTML.length+3}ch`
+            
+        }
+
+        function over() {
+            butop.style.backgroundColor = 'orangered'
+            butop.style.filter = 'drop-shadow(0pt 0pt 2.3pt gray)'
+        }
+
+        function out() {
+            butop.style.backgroundColor = 'darkorange'
+            butop.style.filter = 'none'
+        }
+
+        function down() {
+            butop.style.backgroundColor = 'red'
+        }
+
+    </script>
+	
+</body>
+</html>
